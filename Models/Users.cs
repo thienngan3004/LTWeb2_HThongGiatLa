@@ -7,6 +7,7 @@ namespace Buoi2.Models;
 public class Users
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
     [Required]
@@ -14,7 +15,9 @@ public class Users
     public string Username { get; set; } = string.Empty;
 
     [Required]
-    [MaxLength(100)] 
+    [MaxLength(100)]
+    [EmailAddress] 
+    
     public string Email { get; set; } = string.Empty;
 
     [Required]
